@@ -11,7 +11,7 @@ function showNickname() {
 function submitNickname() {
   const name = document.getElementById('nickname').value.trim();
   if (!name) {
-    document.getElementById('error-msg').textContent = 'Please enter a nickname.';
+    document.getElementById('error-msg').textContent = 'Please enter a Nickname';
     return;
   }
   // Proceed to the actual game here
