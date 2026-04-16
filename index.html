@@ -2,125 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Points Challenge Game</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .game-container {
-      width: 90%;
-      max-width: 500px;
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 10px;
-    }
-
-    .points {
-      font-size: 24px;
-      margin: 10px 0;
-      color: #22c55e;
-    }
-
-    .task-box {
-      background: #334155;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 15px 0;
-    }
-
-    button {
-      background: #3b82f6;
-      border: none;
-      padding: 10px 15px;
-      margin: 5px;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #2563eb;
-    }
-
-    .danger {
-      background: #ef4444;
-    }
-
-    .danger:hover {
-      background: #dc2626;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Start Screen</title>
 </head>
-
 <body>
-
-  <div class="game-container">
-    <h1>🎮 Points Challenge</h1>
-
-    <div class="points">
-      Points: <span id="points">0</span>
-    </div>
-
-    <div class="task-box">
-      <p id="task">Click start to begin your challenge!</p>
-    </div>
-
-    <button onclick="startGame()">Start Game</button>
-    <button onclick="completeTask()">Complete Task</button>
-    <button class="danger" onclick="resetGame()">Reset</button>
+  <div class="container">
+    <h1>Welcome to the Game</h1>
+    <button class="start-btn" onclick="startGame()">Start</button>
   </div>
 
-  <script>
-    let points = 0;
-
-    const tasks = [
-      "Walk for 1 minute",
-      "Drink water",
-      "Take a deep breath",
-      "Stretch your arms",
-      "Focus for 10 seconds"
-    ];
-
-    function updateUI() {
-      document.getElementById("points").innerText = points;
-    }
-
-    function startGame() {
-      newTask();
-    }
-
-    function newTask() {
-      const random = Math.floor(Math.random() * tasks.length);
-      document.getElementById("task").innerText = tasks[random];
-    }
-
-    function completeTask() {
-      points += 10; // no
-      updateUI();
-      newTask();
-    }
-
-    function resetGame() {
-      points = 0;
-      updateUI();
-      document.getElementById("task").innerText = "Click start to begin your challenge!";
-    }
-  </script>
-
+  
+  <script src="script.js"></script>
 </body>
 </html>
-
