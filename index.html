@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Start Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>The Points Challenge | Pixel Collector</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <div id="screen-start" class="container">
-  <h1>Welcome to the Game</h1>
-  <button class="start-btn" onclick="showNickname()">Start</button>
+
+<!-- BACKGROUND PIXEL CLOUDS (injected by JS) -->
+<div class="clouds-container" id="cloudsContainer"></div>
+
+<!-- ================= SCREEN 1 : START ================= -->
+<div id="screen-start" class="container">
+  <h1>The Points Challenge</h1>
+  <div class="subtitle">Compete. Collect. Conquer.</div>
+  <button class="start-btn" id="startScreenBtn">Start</button>
 </div>
 
-<div id="screen-nickname" class="container" style="display:none;">
-  <h1>Enter your nickname</h1>
-  <p>Choose a name to appear in the game</p>
-  <input id="nickname" type="text" placeholder="Your nickname..." maxlength="20" />
-  <p id="error-msg" style="color:red; font-size:0.85rem; min-height:18px;"></p>
-  <button class="start-btn" onclick="submitNickname()">Let's go!</button>
+<!-- ================= SCREEN 2 : CHARACTER + NICKNAME ================= -->
+<div id="screen-nickname" class="container hidden">
+  <h1>Choose Your Character</h1>
+  <div class="avatar-grid" id="avatarGrid"></div>
+  <div class="nickname-section">
+    <label class="nickname-label">ENTER YOUR USERNAME</label>
+    <input type="text" id="nickname" placeholder="" maxlength="20" />
+    <div id="error-msg"></div>
+  </div>
+  <button class="start-btn" id="confirmCharacterBtn">Let's go!</button>
 </div>
 
-  
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
